@@ -1,0 +1,263 @@
+.body {
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 64px 0;
+}
+
+.navbar .right a {
+  text-decoration: none;
+  color: black;
+}
+.navbar .right a:hover {
+  text-decoration: underline;
+}
+.navbar .right img {
+  height: 24px;
+  width: 24px;
+}
+
+.navbar .left {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.navbar .right {
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .hamburger {
+  display: none;
+}
+.navbar .bar {
+  background-color: black;
+  height: 4px;
+  width: 36px;
+  border-radius: 20px;
+  margin: 3px;
+}
+
+.mobileNav {
+  width: 80px;
+  background-color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: -160px;
+  padding: 16px;
+  z-index: 2;
+  transition: transform 0.67s;
+}
+
+.openDrawer {
+  transform: translateX(-160px);
+}
+
+.mobileNav a {
+  text-decoration: none;
+  color: black;
+  margin: 16px 0;
+}
+.mobileNav a:hover {
+  text-decoration: underline;
+}
+
+.mobileNav img {
+  width: 24px;
+  height: 24px;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-areas:
+    "eth eth alphabet"
+    "eth eth traveler"
+    "astro cube traveler"
+    "cup insta insta"
+    "cup insta insta"
+    "foam foam dimensional"
+    "foam foam dimensional";
+  grid-gap: 16px;
+}
+
+#eth {
+  grid-area: eth;
+}
+#alphabet {
+  grid-area: alphabet;
+}
+#traveler {
+  grid-area: traveler;
+}
+#astro {
+  grid-area: astro;
+}
+#cube {
+  grid-area: cube;
+}
+#cup {
+  grid-area: cup;
+}
+#insta {
+  grid-area: insta;
+}
+#foam {
+  grid-area: foam;
+}
+#dimensional {
+  grid-area: dimensional;
+}
+
+.project {
+  position: relative;
+}
+
+.project img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255, 255, 255, 0.1);
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 36px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+.project .overlay:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.project .overlay.white {
+  color: white;
+}
+
+.footer {
+  text-align: center;
+  padding: 64px;
+}
+
+@media only screen and (max-width: 1100px) {
+  .container {
+    width: 100%;
+  }
+  .project-grid {
+    width: 100%;
+    grid-template-areas:
+      "eth eth"
+      "alphabet traveler"
+      "astro cube"
+      "insta insta"
+      "cup foam"
+      "dimensional dimensional";
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .project-grid {
+    margin-top: 100px;
+  }
+  .navbar {
+    padding: 16px 24px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: white;
+    width: 100%;
+    z-index: 3;
+    box-sizing: border-box;
+  }
+  .navbar .right {
+    display: none;
+  }
+  .navbar .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .project-grid {
+    width: 100%;
+    grid-template-areas:
+      "eth eth"
+      "alphabet alphabet"
+      "traveler traveler"
+      "astro cube"
+      "insta insta"
+      "cup cup"
+      "foam foam"
+      "dimensional dimensional";
+  }
+  .project .overlay {
+    font-size: 24px;
+  }
+}
+
+.animateBar1 {
+  animation: flipBar1 1s;
+  animation-fill-mode: forwards;
+}
+.animateBar2 {
+  animation: fadeBar2 1s;
+  animation-fill-mode: forwards;
+}
+
+.animateBar3 {
+  animation: flipBar2 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes flipBar1 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(45deg) translateX(4px) translateY(10px);
+  }
+}
+
+@keyframes flipBar2 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-45deg) translateX(4px) translateY(-10px);
+  }
+}
+
+@keyframes fadeBar2 {
+  from {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+  to {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+}
